@@ -349,31 +349,66 @@ html{scroll-behavior:smooth}
 @media screen and (max-width:820px){.usage dl div{grid-template-columns:1fr;gap:2px}}
 
 /* dealer kit additions */
-.flow .ref{display:block;font-size:7pt;letter-spacing:0.02em;color:var(--mid);margin:0 0 1mm}
-.flow em{margin-bottom:0.5mm}
-.flow p{font-size:8.3pt;line-height:1.5}
-.flow b{font-size:17pt !important;margin-bottom:2mm !important}
-.flow{margin-top:3mm !important}
-.pick{font-size:9pt;color:var(--dark);margin-top:6mm}
-.cols-3{margin-top:5mm}
-h3 .ask{display:block;font-size:8.6pt;font-weight:500;color:var(--red);letter-spacing:0;margin:0.5mm 0 1.5mm;line-height:1.45}
-.cols-3 .col{display:flex;flex-direction:column}
-.cols-3 .col ul{margin-bottom:2.5mm}
-.topic{margin-top:auto;font-size:8pt;line-height:1.55;color:var(--dark);background:var(--fwhite);padding:2mm 2.5mm}
-.topic b{display:block;font-weight:500;font-size:7.5pt;color:var(--black);margin-bottom:0.5mm}
-.msgtag{display:inline-block;margin-left:1.5mm;font-size:6.6pt;padding:0 1.3mm;border:1px solid var(--light);color:var(--dark);white-space:nowrap;vertical-align:1px}
+/* P01 */
+.howto{margin-top:3mm !important}
+.howto b{font-size:17pt !important;margin-bottom:2mm !important}
+.howto em{margin-bottom:0.8mm}
+.howto p{font-size:8.6pt;line-height:1.5}
+.howto .refs{display:flex;flex-wrap:wrap;gap:0 2.5mm}
+.ref{display:inline-block;font-size:7.3pt;color:var(--mid);text-decoration:underline;text-decoration-color:var(--light);text-underline-offset:2px;margin:0 0 1mm}
+.ref:hover{color:var(--red);text-decoration-color:var(--red)}
+/* P02 accordion */
+.qa{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(5,auto);column-gap:6mm;margin-top:8mm;align-items:start}
+.qi{display:grid;grid-row:span 5;grid-template-rows:subgrid;align-content:start}
+.qhead{display:contents}
+.qlab{display:block;font-size:8pt;letter-spacing:0.12em;color:var(--mid);font-weight:500;margin-bottom:1mm;text-transform:uppercase}
+.qq{font-size:12pt;margin-bottom:1.5mm}
+.qans{font-size:9.6pt;line-height:1.6;color:var(--dark)}
+.qtog{grid-row:4;justify-self:start;display:none;overflow:visible;padding-right:1mm !important;align-items:center;gap:2mm;font:inherit;font-size:8.5pt;font-weight:500;color:var(--black);background:none;border:0;padding:2mm 0;cursor:pointer}
+.qtog .t{text-decoration:underline;text-decoration-color:var(--red);text-underline-offset:3px}
+.qtog::after{content:"";width:1.5mm;height:1.5mm;border:solid var(--black);border-width:0 1.5px 1.5px 0;transform:translateY(-25%) rotate(45deg)}
+.qi.open .qtog::after{transform:translateY(25%) rotate(-135deg)}
+.qtog:hover .t{color:var(--red)}
+.qtog:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.qbody{grid-row:5;margin-top:3mm;padding-top:3mm;border-top:1px solid var(--fwhite)}
+.qbody p{font-size:8.8pt;line-height:1.6;color:var(--dark)}
+.qlink{margin-top:2.5mm !important;font-size:8.2pt !important}
+.qlink b{display:block;font-weight:500;font-size:7.5pt;color:var(--black);margin-bottom:0.5mm}
+.qlink a,.caselink{color:var(--black);text-decoration:underline;text-decoration-color:var(--red);text-underline-offset:3px;white-space:nowrap}
+.qlink a:hover,.caselink:hover{color:var(--red)}
+/* P05 */
+.msgtag{display:inline-block;margin-right:2mm;font-size:7.4pt;font-weight:500;padding:0 1.6mm;border:1px solid var(--light);color:var(--black);white-space:nowrap;vertical-align:1px}
+.caselink{white-space:normal}
+.case{scroll-margin-top:80px}
+#cases,.case{scroll-margin-top:80px}
 @media screen{
-  .flow .ref{font-size:12px;margin-bottom:6px}
-  .flow p{font-size:14px}
-  .pick{font-size:15px;margin-top:28px}
-  .cols-3{margin-top:24px}
-  h3 .ask{font-size:14px;margin:2px 0 6px}
-  .topic{font-size:13.5px;padding:10px 12px}
-  .cols-3 .col ul{margin-bottom:12px}
-  .topic b{font-size:12.5px;margin-bottom:2px}
-  .msgtag{font-size:12px;padding:1px 8px;margin-left:8px}
+  .js .qtog{display:inline-flex}
+  .js .qhead > *{cursor:pointer}
+  .js .qi:not(.open) .qbody{display:none}
+  .howto .refs{gap:0 12px}
+  .ref{font-size:12.5px;margin-bottom:6px}
+  .howto p{font-size:14.5px}
+  .qa{column-gap:40px;margin-top:40px}
+  .qlab{font-size:12px;margin-bottom:4px}
+  .qq{font-size:20px;margin-bottom:6px}
+  .qans{font-size:15.5px}
+  .qtog{font-size:14px;padding:12px 0 4px;min-height:44px}
+  .qtog::after{width:7px;height:7px}
+  .qbody{margin-top:8px;padding-top:14px}
+  .qbody p{font-size:14.5px}
+  .qlink{margin-top:12px !important;font-size:13.5px !important}
+  .qlink b{font-size:12.5px;margin-bottom:2px}
+  .msgtag{font-size:12.5px;padding:1px 8px;margin-right:10px}
 }
+@media screen and (max-width:820px){
+  .qa{display:block;margin-top:32px}
+  .qi{display:block;padding:18px 0;border-top:1px solid var(--fwhite)}
+  .qi:first-child{border-top:0;padding-top:0}
+  .msgtag{display:table;margin:0 0 4px}
+}
+@media print{.qtog{display:none !important}.qbody{display:block !important}}
 </style>
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 <nav class="side" aria-label="페이지 이동">
@@ -403,14 +438,14 @@ h3 .ask{display:block;font-size:8.6pt;font-weight:500;color:var(--red);letter-sp
   <div class="sec" style="margin-top:6mm">
     <div class="secno">00 · HOW TO USE</div>
     <h2>이 키트를 쓰는 법</h2>
-    <p class="lead">퍼시스 오피스 구독 서비스를 소개할 때 참고할 공통의 브랜드 관점과 핵심 메시지를 정리했습니다.<br>예를 들어 ‘전사 의자 교체’를 주제로 쓴다면, 아래처럼 필요한 내용을 골라 연결해 볼 수 있습니다.</p>
-    <div class="steps flow">
-      <div><b>01</b><em>고객 상황에서 시작</em><span class="ref">P05 글감</span><p>여러 직원의 의자를 한꺼번에 바꾸려면 초기 구매 비용이 부담될 수 있습니다.</p></div>
-      <div><b>02</b><em>관련 메시지 고르기</em><span class="ref">P02 핵심 메시지</span><p>월 이용료 방식으로 초기 구매 비용 부담을 분산할 수 있습니다.</p></div>
-      <div><b>03</b><em>근거·사례 연결</em><span class="ref">P03 근거 · P05 사례</span><p>전사 의자를 교체하며 구독을 선택한 광고대행업 D사의 사례를 참고합니다.</p></div>
-      <div><b>04</b><em>상담 안내로 마무리</em><span class="ref">P07 발행 전 체크</span><p>예산과 교체 목적에 맞는 방식인지 상담을 통해 확인하도록 안내합니다.</p></div>
+    <p class="lead">퍼시스 오피스 구독을 소개할 때 참고할 브랜드 관점과 핵심 메시지를 정리했습니다.<br>예를 들어 ‘전사 의자 교체’라면 이렇게 활용해 볼 수 있습니다.</p>
+    <div class="steps howto">
+      <div><b>01</b><em>고객 상황에서 시작</em><a class="ref" href="#p5">P05 글감</a><p>직원 의자를 한 번에 바꾸려니 구매 비용이 부담된다는 고민</p></div>
+      <div><b>02</b><em>관련 메시지 고르기</em><a class="ref" href="#p2">P02 핵심 메시지</a><p>월 이용료로 초기 구매 부담을 나눌 수 있다는 점</p></div>
+      <div><b>03</b><em>필요하면 근거·사례 연결</em><span class="refs"><a class="ref" href="#p3">P03 근거</a><a class="ref" href="#cases">P05 사례</a></span><p>같은 고민으로 구독을 선택한 광고대행업 D사 사례</p></div>
+      <div><b>04</b><em>내 고객의 이야기로 쓰기</em><span class="refs"><a class="ref" href="#p6">P06 예시 글</a><a class="ref" href="#p7">P07 체크</a></span><p>직접 만난 고객의 고민과 현장 경험을 더해 자유롭게</p></div>
     </div>
-    <div class="callout"><b>작성 매뉴얼이 아닙니다.</b> 이 키트는 원고의 목차나 문장을 정해 주지 않습니다. 위 흐름도 하나의 예시예요. 키트의 문장을 그대로 옮기기보다, 각자의 고객과 현장 경험을 바탕으로 나만의 콘텐츠를 만들어 주세요.</div>
+    <div class="callout"><b>작성 매뉴얼이 아닙니다.</b> 위 흐름은 하나의 예시일 뿐, 글의 순서나 문장을 정해 주지 않습니다. 키트의 문장을 그대로 옮기기보다 각자의 고객과 현장 경험으로 나만의 콘텐츠를 만들어 주세요.</div>
   </div>
   <div class="foot"><span>퍼시스 브랜드관리팀</span><span class="pn">01 <em>/ 07</em></span></div>
 </section>
@@ -422,39 +457,34 @@ h3 .ask{display:block;font-size:8.6pt;font-weight:500;color:var(--red);letter-sp
     <div class="secno">01 · CORE MESSAGE</div>
     <h2>주제는 달라도, 출발점은 같습니다</h2>
     <div class="key"><p>퍼시스 오피스 구독 서비스는 사무가구 도입부터 이용 중 관리, 조직 변화에 따른 공간 조정, 사용 이후의 가구 처리까지 하나로 연결해 지원하는 오피스 운영 서비스입니다.</p></div>
-    <p class="lead" style="margin-bottom:0">퍼시스는 ‘사무환경이 문화를 만든다’는 관점에서 좋은 사무환경의 중요성을 이야기해 왔습니다.<br>하지만 좋은 사무환경을 구축하는 것만으로는 충분하지 않습니다.<br>조직과 일하는 방식이 변화하는 만큼, 오피스도 그 변화에 맞춰 지속적으로 관리하고 조정해야 합니다.</p>
+    <p class="lead" style="margin-bottom:0">퍼시스는 ‘사무환경이 문화를 만든다’는 관점에서 좋은 사무환경의 중요성을 이야기해 왔습니다.<br>하지만 잘 구축하는 것만으로는 충분하지 않습니다.<br>조직과 일하는 방식이 달라지는 만큼, 오피스도 그에 맞춰 지속적으로 관리하고 조정해야 합니다.</p>
 
-    <p class="pick">세 가지 메시지를 모두 담을 필요는 없습니다. 글의 주제와 관련 있는 메시지를 골라 고객의 상황과 연결해 주세요.</p>
-    <div class="cols-3">
-      <div class="col">
-        <h3><small>Why 구독</small><span class="ask">왜 오피스 구독이 필요한지 설명해 주세요</span>오피스도 조직의 변화에 맞춰 달라져야 합니다</h3>
-                <ul>
-          <li>인원이 늘고 새로운 조직이 생기거나 사업장을 옮기면, 처음에 잘 구성한 오피스도 다시 조정해야 합니다.</li>
-          <li>오피스 구독은 사무가구 이용에 더해 이용 중 관리와 공간 조정, 사용 이후의 가구 처리까지 함께 고려하는 운영 방식입니다.</li>
-          <li>이용료를 월 단위로 납부하므로, 여러 제품을 한 번에 도입할 때 초기 구매 비용 부담을 분산할 수 있습니다.</li>
-        </ul>
-        <p class="topic"><b>이야기할 수 있는 소재</b>전사 의자 교체 · 임시 오피스 구축 · 조직 변화에 따른 공간 조정</p>
+    <div class="qa">
+      <div class="qi" id="q1">
+        <div class="qhead"><small class="qlab">Why 구독</small><h3 class="qq">왜 오피스 구독이 필요할까요?</h3><p class="qans">오피스를 구축한 뒤에도 조직의 변화에 맞춰 관리하고 조정해야 하기 때문입니다.</p></div>
+        <button class="qtog" type="button" aria-expanded="false" aria-controls="q1b"><span class="t">자세히 보기</span></button>
+        <div class="qbody" id="q1b" role="region" aria-label="왜 오피스 구독이 필요할까요? 자세히">
+          <p>인원이 늘거나 새 조직이 생기고 사업장을 옮기면, 처음에 잘 구성한 오피스도 다시 조정해야 합니다. 오피스 구독은 사무가구 이용에 더해 이용 중 관리와 공간 조정, 사용 이후의 가구 처리까지 함께 고려하는 운영 방식입니다.</p>
+          <p class="qlink"><b>연결해 볼 수 있는 상황</b>인원·조직 구성이 자주 바뀔 때, 사업장 운영 기간을 예측하기 어려울 때 <a href="#case-h">자동차 부품업 H사 사례</a></p>
+        </div>
       </div>
-      <div class="col">
-        <h3><small>Why 퍼시스</small><span class="ask">퍼시스 오피스 구독의 강점을 설명해 주세요</span>제품을 만드는 전문성을 오피스 운영까지 연결합니다</h3>
-                <ul>
-          <li>퍼시스는 사무가구를 직접 개발·제조합니다. 이렇게 쌓아온 제품 전문성은 이용 중 제품 상태를 살피고 필요한 관리를 검토하는 기반이 됩니다.</li>
-          <li>사무환경을 연구하고 공간을 제안해 온 경험을 바탕으로, 조직과 업무에 맞는 제품 구성과 배치를 함께 검토합니다.</li>
-          <li>고객을 가까이에서 만나는 대리점과 퍼시스그룹의 납품·시공·A/S 기반이 도입부터 이용 중 관리까지 하나의 흐름으로 이어집니다.</li>
-        </ul>
-        <p class="topic"><b>이야기할 수 있는 소재</b>제품 개발·제조 역량 · 공간 제안 경험 · 대리점과 납품·A/S 기반</p>
+      <div class="qi" id="q2">
+        <div class="qhead"><small class="qlab">Why 퍼시스</small><h3 class="qq">왜 퍼시스 오피스 구독일까요?</h3><p class="qans">사무가구를 직접 개발·제조하며 쌓은 전문성을 오피스 운영까지 연결하기 때문입니다.</p></div>
+        <button class="qtog" type="button" aria-expanded="false" aria-controls="q2b"><span class="t">자세히 보기</span></button>
+        <div class="qbody" id="q2b" role="region" aria-label="왜 퍼시스 오피스 구독일까요? 자세히">
+          <p>제품을 직접 만드는 만큼, 이용 중 제품 상태를 살피고 필요한 관리를 검토하는 기반이 있습니다. 공간을 제안해 온 경험으로 조직에 맞는 구성과 배치를 함께 검토하고, 대리점과 퍼시스그룹의 납품·시공·A/S 기반이 도입부터 이용 중 관리까지 이어집니다.</p>
+          <p class="qlink"><b>연결해 볼 수 있는 상황</b>임시 오피스나 별도 사업장에도 본사와 같은 환경이 필요할 때 <a href="#case-k">IT 인프라·클라우드업 K사 사례</a></p>
+        </div>
       </div>
-      <div class="col">
-        <h3><small>고객에게는</small><span class="ask">구독으로 고객에게 무엇이 달라지는지 설명해 주세요</span>필요한 환경은 갖추고, 운영 부담은 줄입니다</h3>
-                <ul>
-          <li>초기 구매 비용 부담을 분산하면서, 이용 목적과 예산에 적합한 업무환경을 마련할 수 있습니다.</li>
-          <li>이용 중에는 계약 범위에 따라 가구 점검과 배치 조정을 지원받을 수 있어, 변화가 생길 때마다 담당자가 모든 과정을 직접 챙겨야 하는 부담을 줄일 수 있습니다.</li>
-          <li>계약이 끝나면 계약 유형에 따라 가구를 인수하거나 반납할 수 있어, 사용 이후의 보관·처분 부담까지 미리 고려할 수 있습니다.</li>
-        </ul>
-        <p class="topic"><b>이야기할 수 있는 소재</b>초기 구매 비용 부담 · 운영 담당자의 업무 · 사용 기간과 종료 조건</p>
+      <div class="qi" id="q3">
+        <div class="qhead"><small class="qlab">고객에게는</small><h3 class="qq">고객에게 어떤 점이 좋을까요?</h3><p class="qans">초기 구매 부담은 나누고, 이용 중 관리와 사용 이후의 가구 처리까지 미리 고려할 수 있습니다.</p></div>
+        <button class="qtog" type="button" aria-expanded="false" aria-controls="q3b"><span class="t">자세히 보기</span></button>
+        <div class="qbody" id="q3b" role="region" aria-label="고객에게 어떤 점이 좋을까요? 자세히">
+          <p>이용료를 월 단위로 납부해 여러 제품을 한 번에 도입할 때의 비용 부담을 분산할 수 있습니다. 이용 중에는 계약 범위에 따라 점검과 배치 조정을 지원받고, 계약이 끝나면 계약 유형에 따라 가구를 인수하거나 반납할 수 있습니다.</p>
+          <p class="qlink"><b>연결해 볼 수 있는 상황</b>전사 의자·가구를 한 번에 교체할 때, 가구 관리를 전담할 인력이 없을 때 <a href="#case-d">광고대행업 D사 사례</a></p>
+        </div>
       </div>
     </div>
-
   </div>
   <div class="foot"><span>퍼시스 브랜드관리팀</span><span class="pn">02 <em>/ 07</em></span></div>
 </section>
@@ -545,33 +575,33 @@ h3 .ask{display:block;font-size:8.6pt;font-weight:500;color:var(--red);letter-sp
     <h2>소재는 자유롭게, 이야기는 고객의 상황에서</h2>
     <p class="lead">한 편의 글에 모든 장점을 담을 필요는 없습니다.<br>고객이 자주 마주하는 상황 하나를 정해, 가장 관련 있는 가치를 중심으로 이야기해 주세요.</p>
     <table>
-      <thead><tr><th style="width:32%">고객의 상황</th><th style="width:46%">연결할 수 있는 이야기 · 추천 메시지</th><th>참고 사례</th></tr></thead>
+      <thead><tr><th style="width:33%">고객의 상황</th><th style="width:47%">전달할 가치 · 이야기</th><th>참고 사례</th></tr></thead>
       <tbody>
-        <tr><td>전사 의자·가구를 한 번에 교체해야 할 때</td><td>구매 부담을 분산하며 목적에 맞는 제품 선택<span class="msgtag">Why 구독</span></td><td>광고대행업 D사</td></tr>
-        <tr><td>임시 오피스·별도 사업장을 열 때</td><td>본사와 같은 환경, 떨어진 사업장 관리 고려<span class="msgtag">Why 퍼시스</span></td><td>IT 인프라·클라우드업 K사</td></tr>
-        <tr><td>사업장 운영 기간을 예측하기 어려울 때</td><td>사용 이후의 가구 보관·처분 부담까지 미리 고려<span class="msgtag">고객에게는</span></td><td>자동차 부품업 H사</td></tr>
-        <tr><td>인원이나 조직 구성이 자주 달라질 때</td><td>변화한 조직에 맞춰 가구 배치를 다시 검토<span class="msgtag">Why 구독</span></td><td>—</td></tr>
-        <tr><td>가구 관리를 전담할 인력이 없을 때</td><td>이용 중 점검·클리닝 등 관리 지원 활용<span class="msgtag">고객에게는</span></td><td>—</td></tr>
+        <tr><td>전사 의자·가구를 한 번에 교체해야 할 때</td><td><span class="msgtag">초기 구매 부담 분산</span>교체 목적에 맞는 제품을 비교해 선택</td><td><a class="caselink" href="#case-d">광고대행업 D사</a></td></tr>
+        <tr><td>임시 오피스·별도 사업장을 열 때</td><td><span class="msgtag">업무환경 수준 유지</span>떨어진 사업장의 관리 여건까지 고려</td><td><a class="caselink" href="#case-k">IT 인프라·클라우드업 K사</a></td></tr>
+        <tr><td>사업장 운영 기간을 예측하기 어려울 때</td><td><span class="msgtag">사용 이후의 가구 처리</span>보관·처분 부담을 미리 고려</td><td><a class="caselink" href="#case-h">자동차 부품업 H사</a></td></tr>
+        <tr><td>인원이나 조직 구성이 자주 달라질 때</td><td><span class="msgtag">공간 조정</span>달라진 조직에 맞춰 가구 배치를 다시 검토</td><td>—</td></tr>
+        <tr><td>가구 관리를 전담할 인력이 없을 때</td><td><span class="msgtag">이용 중 관리 지원</span>점검·클리닝 등 관리 지원 활용</td><td>—</td></tr>
       </tbody>
     </table>
   </div>
   <div class="sec" style="margin-top:8mm">
     <h3><small>Customer Stories</small>고객 사례에서 찾은 구독 선택의 이유</h3>
-    <div class="cases">
-      <div class="case">
+    <div class="cases" id="cases">
+      <div class="case" id="case-d">
         <div class="tag">광고대행업 D사</div>
         <h4>전사 의자 교체, 초기 구매 부담은 분산해</h4>
         <p>노후 의자를 교체해 전사 구성원의 업무환경을 개선하고자 했습니다. 한 번에 드는 구매 비용이 고민이었던 만큼 월 단위로 비용을 분산할 수 있는 구독을 선택했고, 여러 제품을 비교해 교체 목적에 맞는 의자를 도입했습니다. 교체 이후 구성원들의 긍정적인 반응을 확인했습니다.</p>
         <a class="more" href="https://blog.naver.com/fursys_official/224414739443" target="_blank" rel="noopener">사례 원문 보기 ↗</a>
       </div>
-      <div class="case">
+      <div class="case" id="case-k">
         <div class="tag">IT 인프라·클라우드업 K사</div>
         <h4>임시 오피스에도 본사와 같은 업무환경을</h4>
         <p>향후 이전 가능성이 있는 임시 오피스에도 본사와 같은 제품을 두고자 했습니다. 구매 부담과 본사와 떨어진 사업장의 관리 여건을 함께 고려해 구독을 선택했고, 설치 품질에 만족을 표했습니다. 이후의 유지관리와 도면 지원은 앞으로 활용을 기대하는 부분입니다.</p>
         <span class="type">인수형</span>
         <a class="more" href="https://blog.naver.com/fursys_official/224414739443" target="_blank" rel="noopener">사례 원문 보기 ↗</a>
       </div>
-      <div class="case">
+      <div class="case" id="case-h">
         <div class="tag">자동차 부품업 H사</div>
         <h4>사용 이후의 가구 처리까지 고려한 선택</h4>
         <p>신규 프로젝트 조직을 위해 임차 사업장을 마련했지만, 운영 기간과 조직 규모를 예측하기 어려웠습니다. 구매한 가구의 매각·보관·자산 처리 부담을 고려해 계약 종료 후 반납할 수 있는 반납형을 선택했습니다. 본사와 같은 퍼시스 제품으로 공간을 구성했고, 설치 현장에서 팀장석 배치 두 안을 비교해 최종안을 정했습니다.</p>
@@ -667,6 +697,16 @@ h3 .ask{display:block;font-size:8.6pt;font-weight:500;color:var(--red);letter-sp
   var s=load(); boxes.forEach(function(b,i){b.checked=!!s[i]; b.addEventListener('change',function(){save(boxes.map(function(x){return x.checked}));upd();});});
   var r=document.getElementById('ckreset'); if(r)r.addEventListener('click',function(){boxes.forEach(function(b){b.checked=false});save([]);upd();});
   upd();
+})();
+</script>
+<script>
+(function(){
+  [].forEach.call(document.querySelectorAll('.qi'),function(q){
+    var b=q.querySelector('.qtog'), h=q.querySelector('.qhead'), t=b.querySelector('.t');
+    function set(o){q.classList.toggle('open',o);b.setAttribute('aria-expanded',o?'true':'false');t.textContent=o?'접기':'자세히 보기';}
+    b.addEventListener('click',function(){set(!q.classList.contains('open'))});
+    h.addEventListener('click',function(){if(String(window.getSelection())) return; set(!q.classList.contains('open'))});
+  });
 })();
 </script>
 </body>
