@@ -406,6 +406,18 @@ html{scroll-behavior:smooth}
   .qi:first-child{border-top:0;padding-top:0}
   .msgtag{display:table;margin:0 0 4px}
 }
+/* P05 case note */
+.casenote{display:grid;gap:1mm;margin-top:3.5mm}
+@media print{#p5 .sec + .sec{margin-top:7mm !important}#p5 .sec:has(+ .sec){margin-bottom:7mm}}
+.casenote div{display:grid;grid-template-columns:20mm 1fr;gap:4mm}
+.casenote dt{font-size:8.3pt;font-weight:500;color:var(--dark)}
+.casenote dd{font-size:8.3pt;line-height:1.55;color:var(--mid)}
+@media screen{
+  .casenote{gap:6px;margin-top:20px}
+  .casenote div{grid-template-columns:96px 1fr;gap:16px}
+  .casenote dt,.casenote dd{font-size:13.5px}
+}
+@media screen and (max-width:820px){.casenote div{grid-template-columns:1fr;gap:0}.casenote{gap:10px}}
 /* v3: P06 example flow */
 @media print{#p5 .sec:has(+ .foot),#p6 .sec:has(+ .foot){margin-bottom:0}}
 .ex4{padding:2mm 7mm !important}
@@ -456,7 +468,7 @@ html{scroll-behavior:smooth}
     <div class="cover-meta">
       <div>용도<span>오피스 구독 서비스 글쓰기 가이드</span></div>
       <div>대상<span>퍼시스 유통망</span></div>
-      <div>버전<span>2026.10.28</span></div>
+      <div>버전<span>2026.10.29</span></div>
     </div>
   </div>
 
@@ -639,7 +651,11 @@ html{scroll-behavior:smooth}
         <a class="more" href="https://blog.naver.com/fursys_official/224433805259" target="_blank" rel="noopener">사례 원문 보기 ↗</a>
       </div>
     </div>
-    <p class="note">고객사는 실명 대신 업종과 이니셜로 표기합니다. 사례를 소개할 때는 실제로 경험한 내용과 앞으로 기대하는 내용을 구분해 주세요. H사는 반납형을 선택한 것으로, 반납을 완료한 사례가 아닙니다. 자세한 내용과 고객 발언은 공식 사례 글을 링크로 연결해 주세요.</p>
+    <dl class="casenote">
+      <div><dt>사례 표기</dt><dd>업종과 이니셜로 간략히 소개합니다. 고객사명과 자세한 내용은 공식 원문에서 확인해 주세요.</dd></div>
+      <div><dt>별도 활용</dt><dd>원문의 고객사명이나 발언, 사진을 직접 만드는 콘텐츠에 쓰려면 먼저 활용 범위를 확인해 주세요.</dd></div>
+      <div><dt>경험과 기대</dt><dd>실제 경험과 앞으로의 기대는 구분해 주세요. H사는 반납형을 선택한 사례로, 반납을 완료한 사례는 아닙니다.</dd></div>
+    </dl>
   </div>
 
   <div class="foot"><span>퍼시스 브랜드관리팀</span><span class="pn">05 <em>/ 07</em></span></div>
@@ -661,8 +677,8 @@ html{scroll-behavior:smooth}
     <div class="usage">
       <div class="usage-title">자료 활용 시 확인해 주세요</div>
       <dl>
-        <div><dt>조사 수치</dt><dd>인용할 때는 출처와 응답자 기준을 함께 표기해 주세요. 보고서 원본과 표·그래프·이미지의 재배포·재사용은 보고서의 자료 이용 안내를 확인해 주세요.</dd></div>
-        <div><dt>사진·이미지</dt><dd>공식 자료의 사진·도식·로고는 임의로 복사·편집하지 않고, 퍼시스가 허용한 공식 이미지만 안내된 범위에서 활용해 주세요. 그 밖의 자료는 링크로 연결하고, 직접 촬영한 쇼룸·일반 납품 현장 사진은 구독 고객 사례처럼 소개하지 않습니다.</dd></div>
+        <div><dt>조사 수치</dt><dd>조사 결과를 인용할 때는 출처와 응답자 기준을 함께 표기해 주세요. 보고서 원본이나 표·그래프·이미지를 활용할 때는 해당 자료의 이용 조건을 먼저 확인해 주세요.</dd></div>
+        <div><dt>사진·이미지</dt><dd>사진·도식·로고는 사용이 허용된 범위에서 활용해 주세요. 별도 활용 권한이 확인되지 않은 자료는 복사·편집하는 대신 공식 원문으로 연결해 주세요. 쇼룸이나 일반 납품 현장 사진을 실제 구독 고객 사례처럼 소개하지 않도록 유의해 주세요.</dd></div>
       </dl>
     </div>
   </div>
